@@ -1,0 +1,33 @@
+name: exatrkx-tracking
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - pip
+  - python==3.8
+  - pytorch==1.7.1
+  - torchvision==0.8.2
+  - torchaudio==0.7.2
+  - cudatoolkit=10.2
+  - pip:
+    - https://pytorch-geometric.com/whl/torch-1.7.0+cu102/torch_scatter-2.0.7-cp38-cp38-linux_x86_64.whl
+    - https://pytorch-geometric.com/whl/torch-1.7.0+cu102/torch_sparse-0.6.9-cp38-cp38-linux_x86_64.whl
+    - https://pytorch-geometric.com/whl/torch-1.7.0+cu102/torch_cluster-1.5.9-cp38-cp38-linux_x86_64.whl
+    - https://pytorch-geometric.com/whl/torch-1.7.0+cu102/torch_spline_conv-1.2.1-cp38-cp38-linux_x86_64.whl
+    - torch-geometric
+    - pytorch-lightning==1.2.5
+    - numpy
+    - scipy
+    - pandas
+    - matplotlib
+    - sklearn
+    - pyyaml>=5.1
+    - decorator
+    - more_itertools
+    - simple_slurm
+    - memory_profiler
+    - traintrack
+    - https://github.com/LAL/trackml-library/archive/refs/heads/master.zip
+    - faiss-gpu
+    - cupy-cuda102
+    - https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py38_cu102_pyt171/pytorch3d-0.4.0-cp38-cp38-linux_x86_64.whl

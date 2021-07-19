@@ -60,34 +60,20 @@ This default installation of Docker only allows to run Docker containers as a su
 
 ***
 
-# Creating a Docker image to run the ExatrkX pipeline
+## ExatrkX Docker Container from DockerHub
+https://hub.docker.com/repository/docker/fialhocoelho/docker_exatrkx
+
+## Building a Docker image to run the ExatrkX pipeline from Dockerfile
 
 At the root of this repository, run the following command to create a Docker image from the `Dockerfile` configuration file:
 ```
 $ docker build -t exatrkx-docker-gpu .
 ```
-# Running ExatrkX pipeline example using Docker Container
 
-The volume in this Docker configuration are defined to be used for input and output data.
-For exemplification, this tutorial will use the folder `data` in this repository:
-
-At the root of this repository, set the env var `EXATRKX_DATA` to define you folder to I/O:
-```
-export EXATRKX_DATA=$PWD/data
-```
-
-Go to examples folder:
-```
-cd Pipelines/TrackML_Example/
-```
-Run the following command to create a Docker container from the image configuration file:
-```
-sudo docker run --rm -it --init --gpus=all --ipc=host --user="$(id -u):$(id -g)" -v $PWD:/app -v $EXATRKX_DATA:/data exatrkx-docker-gpu traintrack --pipeline_config configs/pipeline_dockertest.yaml
-```
-If you want to use other paths to run you pipeline, you need to change the paths in the pipeline configurations files.
-E.g.:
+If you want to use other I/O paths to run you pipeline, you need to change the paths in the pipeline configurations files.
+E.g. of configuration file:
 ```
 Pipelines/TrackML_Example/LightningModules/Processing/prepare_dockertest.yaml #configuration file to the Processing step from the pipeline
 ```
 
-The change the Docker volume configuration, you need to change de `Dockerfile` in the root of this repository.
+The change the default Docker volume configuration, you need to change de `Dockerfile` in the root of this repository.
